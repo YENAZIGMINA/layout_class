@@ -1,0 +1,154 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+body {
+    color: #333;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* ▼.main_visual */
+.main_visual {
+    width: calc(100% - 100px);
+    height: 700px;
+    margin: 50px auto; /* 이미지 가운데 정렬 */
+}
+.main_visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ▼.cont01 */
+.cont01 {
+    width: calc(100% - 100px); /* 양끝 여백 50px씩 빼고 */
+    margin: 100px auto;
+}
+.cont01 .title {
+    margin-bottom: 40px;
+}
+.cont01 .title h3 {
+    font-family: 'GmarketSansMedium';
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.cont01 .title p {
+    font-size: 20px;
+}
+.cont01 ul {
+    display: flex;
+    justify-content: space-between;
+}
+.cont01 ul li {
+    width: calc(100% / 10 - 20px);
+    /* height: 207px; */
+    height: calc((100vw - 100px) / 10 - 20px);
+    /* height: calc((.cont01와 똑같이 100vw(%) - 100px) / 10 - 20px */
+    /* vw => 브라우저의 너비에 따라 값이 달라짐 
+       vw, vh단위는 웹사이즈의 크기를 줄이고 늘릴 때*/
+    background-color: rgb(255, 115, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 50%; /* 모서리둥글게:50% */
+    text-align: center;
+    /* line-height: 207px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ▼.cont02 */
+.cont02 {
+    background: url(../img/silk.jpg) center center / cover no-repeat;
+    /* 배경에 이미지 깔기 -> x축 y축 / 채우기 반복여부 */
+    background-attachment: fixed;
+    padding: 150px;
+}
+.cont02 .inner {
+    width: 1440px;
+    margin: 0 auto;
+}
+.cont02 .inner .title h3 {
+    font-family: 'GmarketSansMedium';
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #ff2578;
+    position: relative;
+    z-index: 5;
+}
+.cont02 .inner .title h3::before {
+    content: '';
+    background-color: aliceblue;
+    width: 375px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* 마이너스만 쓰면 이미지 뒤로 넘어감 */
+}
+.cont02 .inner .title p {
+    margin-bottom: 60px;
+}
+.cont02 .inner .list {
+    display: flex;
+    justify-content: space-between;
+}
+.cont02 .inner .list .item {
+    width: calc(100% / 5 - 20px);
+    background-color: rgba(255, 246, 222, 0.807);
+    padding: 30px;
+    box-sizing: border-box; /* 설정한 width값에 padding 값이 포함되도록 설정 */
+    /* box-sizing이 없다면 width 밖으로 padding 값이 추가되어 보여짐 */
+    transition: 1s;
+}
+.cont02 .inner .list .item figure {
+    width: 100%;
+    height: 300px;
+    position: relative;
+}
+.cont02 .inner .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cont02 .inner .list .item figure img.off {
+    display: none;
+}
+.cont02 .inner .list .item:hover figure img.off {
+    display: block; /* 이미지 나타나기 */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.cont02 .inner .list .item:hover figure img.on {
+    display: none;
+}
+.cont02 .inner .list .item:hover {
+    transform: translateY(-40px);
+    transition: 1s;
+}
+.cont02 .inner .list .item figure p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    padding: 0 20px;
+    background-color: rgba(255, 92, 160, 0.657);
+    border: 1px solid #ff2578;
+    color: rgb(255, 239, 244);
+    line-height: 80px;
+}

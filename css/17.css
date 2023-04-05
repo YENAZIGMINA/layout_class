@@ -1,0 +1,75 @@
+@charset "utf-8";
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.item {
+    width: 450px;
+    height: 600px;
+    margin: 0 auto;
+   /*  0은 상하위치 옮길 수 있고, 좌우는 auto로 둬야 중앙정렬됨 */
+    position: relative; 
+   /* ^^^가상선택자 .item::before 와 .item div의 부모역할을 동시에! */
+}
+.item figure {
+    width: 100%;
+    height: 100%;
+}
+.item figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item div {
+    color: aliceblue;
+    text-align: center;
+    position: absolute; /* ^^^ item의 자식1 */
+    top: 50%; /* 공식 외우기 1. relative 값의 50% 중앙위치 */
+    /* 부모인 position:relative가 가진 값에서 이동 */
+    left: 0;
+    transform: translate(0, -50%); /* 2. 텍스트의 반만큼 올리기 */
+    /* 변형 : 이동(x축, y축) - 본인이 가진 값으로 이동 */
+    opacity: 0; /* 숨김처리 */
+    transition: 0.7s;
+}
+.item::before {
+    content: ''; /* 가상선택자 작성시 필수! */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(210, 105, 30, 0.761);
+    display: block; /* before 인라인요소 ->블럭요소 변경 (사이즈) */
+    position: absolute; /* ^^^ 가상선택자 - item의 자식2 */
+    top: 0;
+    left: 0;
+    opacity: 0; /* 숨김처리 */
+    transition: 0.7s;
+}
+.item div a {
+    width: 120px;
+    height: 40px;
+    font-size: 13px;
+    background-color: brown;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: block; /* 1. 블럭요소로 바뀌면 다시 좌측으로 이동하게 되는데,, */
+    margin: 0 auto; /* 2. width값이 있으니 이 태그로 중앙정렬 */
+    line-height: 40px; /* 세로높이 가운데 이동 (height 높이값과 동일하게 값 작성) */
+    margin-top: 40px;
+}
+
+.item:hover div {
+    opacity: 1;
+} /* 1. 이 hover만 작성하면, 가상선택자에 작성한 내용은 화면에 안나타나므로,, */
+
+.item:hover::before {
+    opacity: 1;
+} /* 2. 가상선택자에도 hover를 적용해줘야함! */
