@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지 레이아웃</title>
+    <link href="css/18.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <h1> <!-- 로고 역할 -->
+                <a href="#"> 고양이학교 </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#">회사소개</a>
+                        <ul class="depth">
+                            <li><a href="#">브랜드소개</a></li>
+                            <li><a href="#">위치안내</a></li>
+                        </ul> <!-- .depth end -->
+                    </li>
+                    <li><a href="#">제품/프로그램 </a></li>
+                    <li><a href="#">연구/개발</a></li>
+                    <li><a href="#">PR</a></li>
+                    <li><a href="#">고객지원</a></li>
+                    <li><a href="#">채용</a></li>
+                </ul>
+            </nav>
+            <ul class="right_menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">CONTACT</a></li>
+            </ul> <!-- .right_menu end -->
+        
+        </header>
+
+        <main>
+            <section class="main_visual">
+                <img src="img/catcat.jpg" alt="가방고양이" />
+                <div>
+                    <h2>Move into the future with cats</h2>
+                    <p>우리들은 세계 모든 고양이화 함께 상생하고, 미래로 나아갑니다.</p>
+                </div>
+            </section> <!-- .main_visual end -->
+
+            <section class="cont01">
+                <h3>Cat Mask</h3>
+                <div class="list">
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/cat4.jpg" alt="회색고양이" />
+                            </figure>
+                                <div>
+                                    <p>GREY</p>
+                                    <h4>회색냥이</h4>
+                                </div>
+                        </a>
+                    </div> <!-- .item end -->
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/cat17.jpg" alt="치즈고양이" />
+                            </figure>
+                                <div>
+                                    <p>CHEESE</p>
+                                    <h4>치즈냥이</h4>
+                                </div>
+                        </a>
+                    </div> <!-- .item end -->
+                    <div class="item">
+                        <a href="#">
+                            <figure>
+                                <img src="img/cat_21.jpg" alt="흰색고양이" />
+                            </figure>
+                                <div>
+                                    <p>WHITE</p>
+                                    <h4>흰냥이</h4>
+                                </div>
+                        </a>
+                    </div> <!-- .item end -->
+                </div> <!-- .list end -->
+            </section> <!-- .cont01 end -->
+        </main>
+        <footer>
+            <p>(C) 2021.CAT-SCHOOL CO.LTD. All rights reserved.</p>
+        </footer>
+
+    </div> <!-- .wrap end -->
+</body>
+</html>

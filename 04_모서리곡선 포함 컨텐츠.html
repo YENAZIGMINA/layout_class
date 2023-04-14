@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모서리곡선 포함 컨텐츠</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 300px;
+            background-color: rgb(230, 191, 92);
+            color: rgb(61, 23, 3);
+            padding: 50px; /* 안쪽 여백 잡아주기 */
+            text-align: center; /* 글자정렬 : 중앙정렬 */
+            /* 속성값 => left, center, right */
+        }
+        div img{
+            width: 300px;
+            height: 300px;
+            border-radius: 150px 150px 0px 0px;
+            object-fit: cover;
+            /* 이미지,동영상 비율 맞추는 것 / cover는 설정된 사이즈에 이미지가 덮이도록 */
+        }
+        div a { /* 인라인 요소 */
+            color: rgb(255, 255, 255);
+            text-decoration: none; /* 글자 밑줄 : 없애기 */
+            background-color: #00615a;
+            display: block;
+            /* a태그가 가지는 인라인요소 특징을 블럭요소 특징으로 변화! 
+               가로로 나열되고, 본인의 영역을 세로로 나열, 전체영역을 가짐*/
+            padding: 10px 0; /* 내부여백 : 위아래 10px 좌우 0px */
+            margin-top: 30px;
+        }
+        div p{
+            margin-top: 20px;
+        }
+        div strong{
+            font-size: 22px;
+        }
+        div a:hover{  /* hover는 마우스 올렸을 때 변화주는 태그 */
+            background-color: rgb(0, 126, 120);
+            color: rgb(255, 204, 83);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="img/people.jpg" alt="발레공연"/> <!-- img/ 이미지 불러올 수 있음 -->
+        <p> 발레에서 두 사람이 함께 춤 추는것</p>
+        <strong>파 드 되 pas de deux </strong>
+        <a href="#">Ballet 바로가기</a>
+
+    </div>
+</body>
+</html>

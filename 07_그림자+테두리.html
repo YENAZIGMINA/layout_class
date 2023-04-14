@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그림자 + 테두리</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{ /* class 이름으로 선택자 잡아서 스타일 입히기 */
+            background-color: rgb(97, 117, 97);
+            color: rgb(254, 254, 254);
+            padding: 100px 0;
+            text-align: center;
+        }
+        .box .border div{
+            display: inline-block;
+            border: 10px solid rgb(183, 225, 197);
+            /* 테두리 : 두께 선스타일 컬러값 */
+            margin: 10px;
+            width: 150px;
+            height: 50px;
+            line-height: 50px; /* 수식 가운데 정렬 (테두리안 글자 중앙정렬 시, 높이값이 같은 50px */
+        }
+        .box .border div:nth-child(2) {
+            border: 3px dotted cornsilk;
+            /* 테두리 : 두께 점선 컬러값 */
+            /* 테두리 종류 - solid, dotted, dashed, double, groove, ridge, inset, outset */
+            /* border-style:double; -> 테두리 스타일만 변경할 때 */
+        }
+        .box .border div:nth-child(3) {
+            border: 3px dashed goldenrod;
+        }
+        .box .border div:nth-child(4) {
+            border: 5px double violet;
+        }
+        .box .border div:nth-child(5) {
+            border: 15px groove red;
+        }
+        .box .border div:nth-child(6) {
+            border: 20px ridge burlywood;
+        }
+        .box .border div:nth-child(7) {
+            border: 20px inset rgb(105, 85, 58);
+        }
+        .box .border div:nth-child(8) {
+            border-style: outset;
+            /* 선-스타일:기본 적용에서 선스타일만 적용 */
+        }
+        .box .border div:nth-child(9) {
+            border-top: 5px dashed #fff000;
+            /* border-위치: 그 위치에만 선 스타일 적용 */
+            border-right: 3px dotted orange;
+            border-bottom: 5px double yellowgreen;
+            border-left: 10px ridge rgb(241, 241, 241);
+        }
+
+        .box .box_shadow div{
+            display: inline-block;
+            background-color: darkseagreen;
+            color: antiquewhite;
+            width: 300px;
+            height: 300px;
+            margin: 30px;
+        }
+        .box .box_shadow div:first-child {
+            box-shadow: 10px 20px 15px #213022b9;
+            /* 그림자 : x축(오른쪽) y축(아래쪽) 블러정도 색상 / 그림자 투명도 값 조절하면 더욱 자연스러움 */
+        }
+        .box .box_shadow div:nth-child(2) {
+            box-shadow: -10px -20px 10px rgba(24, 45, 31, 0.627);
+            /* 그림자 값 -설정하면 반대로 그림자 처리 */
+        }
+        .box .box_shadow div:nth-child(3) {
+            box-shadow: 10px 20px 20px white, -20px -10px 20px pink, -20px -10px 30px deeppink;
+        /* , 로 그림자를 겹겹이 쌓아서 적용할 수 있음 */
+        }
+        .box .box_shadow div:last-child {
+            box-shadow: inset 20px 10px 50px mediumturquoise;
+            /* 내부그림자 적용시 inset 태그 작성 */
+        }
+
+    </style>
+</head>
+<body>
+    <section class="box">
+        <h3>박스 테두리, 그림자</h3>
+        <div class="border">
+            <div>테두리 1</div>
+            <div>테두리 2</div>
+            <div>테두리 3</div>
+            <div>테두리 4</div>
+            <div>테두리 5</div>
+            <div>테두리 6</div>
+            <div>테두리 7</div>
+            <div>테두리 8</div>
+            <div>테두리 9</div>
+        </div> <!-- class "border" end -->
+
+        <div class="box_shadow">
+            <div>그림자 1</div>
+            <div>그림자 2</div>
+            <div>그림자 3</div>
+            <div>그림자 4</div>
+        </div> <!-- class "box_shadow" end -->
+
+    </section>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모서리곡선 + 원형</title>
+    <style>
+        div{
+            width: 200px;  /* 가로 사이즈 */
+            height: 200px; /* 세로 사이즈 */
+            background-color: rgb(108, 93, 204);
+            margin: 20px; /* 외부여백 : 네 변 모두 20px 적용 (컨텐츠 사이 간격띄울 때) */
+        }
+
+
+        div:nth-child(1) {
+            border-radius: 40px; /* 모서리곡선 : 모든 모서리에 40px */
+        }
+        div:nth-child(2) {
+            border-radius: 100px 50px 10px 0px; /* 시계방향으로 모서리 값 적용 */
+        }
+        div:nth-child(3) {
+            border-radius: 10px 50px;
+        }
+        div:nth-child(4) {
+            border-radius: 10px 50px 100px;
+        }
+        div:nth-child(5) {
+            border-radius: 50%; /* 50% 값 입력시 원형 */
+            /* border-radius: 100px; - 반지름값 넣어도 원형 가능 */
+        }
+
+    </style>
+
+</head>
+<body>
+    
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+</body>
+</html>

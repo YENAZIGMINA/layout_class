@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜스폼 이동</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .list {
+            display: flex;
+            justify-content: center;
+        }
+        .list figure {
+            width: 600px;
+            height: 600px;
+            border: 1px solid #000;
+            margin: 30px;
+            overflow: hidden; /* 벗어난 자식요소를 숨김처리 */
+            position: relative;
+        }
+        .list figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.7s; /* 마우스 벗어났을 때도 부드럽게 이동 */
+        }
+        .list figure:nth-child(1) img {
+            transform: translateX(100px);
+        }
+        .list figure:nth-child(2):hover img {
+            transform: translateY(100px);
+            transition: 0.7s;
+        }
+        .list figure p {
+            position: absolute; /* ->때문에 본인이 가지고 있는 영역만 잡힘 (1번) */
+            top: 0;
+            left: 0;
+            width: 100%; /* (2번) 전체영역 잡아줘야 */
+            text-align: center; /* (3번) 글자 중앙정렬 먹힘 */
+            z-index: -1;
+            font-size: 30px;
+        }
+        .list figure:nth-child(3) img {
+            transform: translate(50px, -200px);
+            /* %값은 img가 가진 너비,높이 값의 비율에 따라 이동 */
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <figure>
+            <img src="img/cook4.jpg" alt="스파게티" />
+        </figure>
+        <figure>
+            <img src="img/cook16.jpg" alt="연어" />
+            <p>추천 연어요리</p>
+        </figure>
+        <figure>
+            <img src="img/cook13.jpg" alt="주방" />
+        </figure>
+    </div> <!-- .list end -->
+</body>
+</html>

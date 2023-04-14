@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puppy List</title>
+    <style>
+        /* 웹 폰트 연결 */
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+        font-family: 'Pretendard-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        } 
+        @font-face {
+        font-family: 'Cafe24Ssurround';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/Cafe24Ssurround.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            /* 이미지 비율에 맞춰서 적용 */
+        }
+
+        section {
+            background-color: rgb(227, 182, 243);
+            padding: 100px 0;
+            text-align: center;
+            /* display:inline-block으로 잡힌 자식을 가운데 정렬 */
+        }
+        section h2{
+            color: rgb(118, 104, 197);  
+        }
+
+        section h3 {
+            font-family: 'Cafe24Ssurround';
+            font-size: 55px;
+            color: rgb(37, 30, 79);
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 55px;
+            
+        }
+
+        section div {
+            width: 410px;
+            height: 620px;
+            background-color: rgb(243, 243, 243);
+            color: rgb(122, 82, 141);
+            display: inline-block; /* 가로로 나열 */
+            padding: 20px;
+            margin: 0 10px;
+            text-align: center; /* 이미지정렬도 가능하지만, 전체 가운데 정렬가능 */
+            /* justify는 양끝 맞춰 정렬 */
+
+            vertical-align: top;
+            /* display:inline-block을 진행 후 수직의 정렬방향 설정 */
+        }
+
+        section div h4 {
+            font-family: 'GmarketSansMedium';
+            font-size: 23px;
+            margin: 35px 0 10px;
+        }
+        section div p{
+            font-family: 'Pretendard-Regular';
+            font-size: 19px;
+            color: rgb(87, 87, 87);
+            text-align: justify;
+            padding: 0 20px;
+        }
+        section a{ 
+            text-decoration: none; /* 글자줄:없애기 */
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            border: 1px solid rgb(255, 255, 255); /* 테두리:1px 실선 색상값 */
+            width: 500px;
+            height: 60px;
+            /* a태그는 인라인요소, 인라인요소 -> 블럭요소로 변경 */
+            display: block;
+            line-height: 60px; /* 글자높이 중앙으로 */
+            margin: 70px auto; /* display:block; 설정되었을 때, auto는 가운데 정렬 */
+        }
+        section a:hover{
+            background-color: rgb(249, 228, 255);
+            color: rgb(38, 11, 63);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h2>HAPPY, PET</h2>
+        <h3>해피, 강아지</h3>
+        <div>
+            <img src="/img/img_01.jpg" alt="말티즈"> <!-- 이미지태그는 단독태그로 닫는 > 꼭 넣기 -->
+            <h4>💙말티즈💙</h4>
+            <p>나의 하나에 쉬이 때 별을 봅니다. 하나에 말 둘 가난한 버리었습니다. 하늘에는 위에 나의 까닭이요, 별이 별 멀리 이름자를 무엇인지 까닭입니다. 릴케 계집애들의 하나에 가슴속에 된 별
+                흙으로 아스라히 봅니다.</p>
+        </div>
+
+        <div>
+            <img src="/img/img_02.jpg" alt="장모 닥스훈트"> <!-- 이미지태그는 단독태그로 닫는 > 꼭 넣기 -->
+            <h4>💜닥스훈트💜</h4>
+            <p>앞이 힘차게 모래뿐일 못할 꽃이 가슴에 이것이야말로 듣는다. 것이 황금시대의 꽃 옷을 든 그들의 동산에는 같지 가지에 교향악이다.</p>
+        </div>
+
+        <div>
+            <img src="/img/img_04.jpg" alt="포메라니안"> <!-- 이미지태그는 단독태그로 닫는 > 꼭 넣기 -->
+            <h4>🤍포메라니안🤍</h4>
+            <p>트고, 청춘의 뜨고, 생생하며, 피고 위하여서, 것이다.보라, 아니한 것이다. 길을 남는 것은 과실이 생명을 청춘 이상을 두손을 것이다. 길을 하는 고행을 관현악이며, 우리 새 것이다.
+                동산에는 우리 광야에서 말이다.</p>
+        </div>
+        <a href="#">더보기</a>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>동영상 + 유튜브</title>
+
+    <!-- animate.css  / 사이트에서 CDN 항목 링크 복사붙여넣기-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"  />
+
+    <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+            background-color: #a7da79a6;
+            z-index: 1; /* 앞, 뒤 위치변경 => position이 있을 때만 사용 */
+        }
+        header .inner {
+            width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        header h1 {
+            position: relative;
+        }
+        header h1 a img {
+            height: 60px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+        }
+
+
+        header .inner ul li {
+            font-family: 'Oswald', sans-serif;
+            display: inline-block;
+            list-style: none;
+            line-height: 100px;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+        header .inner ul li a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        .main_visual {
+            width: 100%; /* 여기서는 의미없음 */
+            height: 100vh;
+        /* 동영상 사이즈 적용시 높이 100%는 적용안됨
+           vh 높이값으로 적용해야 함 */
+           position: relative;
+        }
+        .main_visual video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block; /* 동영상 하단에 작은 여백없애기 */
+        }
+        .main_visual h2 {
+            font-family: 'Homemade Apple', cursive;
+            width: 100%;
+            font-size: 60px;
+            color: rgb(255, 255, 255);
+            position: absolute;
+            top: 45%;
+            left: 0;
+            transform: translate(0, 50%);
+            text-align: center;
+        }
+
+        .cont01 .youtube {
+            width: 940px;
+            background-color: rgb(255, 177, 216); /* 영역확인용 배경컬러 */
+        }
+        .cont01 .youtube div {
+            width: 100%;
+            padding-bottom: 56.25%;
+            /* 유튜브 16:9 비율인데,
+               16:9비율로 늘어나기 위한 값이 56.25%  */
+            position: relative;
+        }
+        .cont01 .youtube div iframe {
+            width: 100%;
+            height: 100%;
+            position: absolute; /* 16:9비율로 만들어놓은 영역 위로 배치하기 위함 */
+            top: 0;
+            left: 0;
+        }
+
+        .cont01 {
+            width: 1440px;
+            margin: 100px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* 수직 중앙정렬 */
+        }
+        .cont01 .text {
+            width: 480px;
+        }
+        .cont01 .text h3 {
+            font-size: 35px;
+            color: rgb(255, 86, 117);
+        }
+        .cont01 .text p {
+            font-size: 18px;
+/*          margin-top: 10px;
+            margin-bottom: 30px; */
+            margin: 10px 0 30px 0;
+        }
+        .cont01 .text a {
+            color: indianred;
+            text-decoration: none;
+            font-size: 20px;
+            border: 1px solid indianred;
+            width: 150px;
+            height: 40px;
+            display: block;  /* a태그는 인라인요소 => 사이즈 조절 안됨 */
+                              /* 인라인 -> 블럭 요소로 변경해야 사이즈, 마진값등 적용됨 */
+            text-align: center;
+            line-height: 40px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="inner animate__animated animate__flipInX">
+              <!--클래스명     효과주기            효과명 -->
+            <h1>
+                <a href="#">
+                    <img src="img/flower.png" alt="로고" />
+                </a>
+            </h1>
+            <nav>
+                <ul>
+                    <li><a href="#">menu1</a></li>
+                    <li><a href="#">menu2</a></li>
+                    <li><a href="#">menu3</a></li>
+                    <li><a href="#">menu4</a></li>
+                    <li><a href="#">menu5</a></li>
+                </ul>
+            </nav>
+            <ul class="menu">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">전체메뉴</a></li>
+            </ul> <!-- .menu end -->
+        </div> <!-- .inner end -->
+    </header>
+
+    <section class="main_visual">
+        <!-- loop : 무한반복 재생
+             muted : 음소거
+             autoplay : 자동재생
+             controls : 재생 컨트롤 바 -->
+        <video controls autoplay loop muted>
+            <source src="img/flower.mp4" type="video/mp4" />
+        </video>
+        <h2>Flower garden</h2>
+    </section> <!-- .main_visual end -->
+
+    <section class="cont01">
+        <div class="youtube">
+            <div>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/BkkvG283d-M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div> <!-- .youtube end -->
+        <div class="text">
+            <h3>작은 베란다 정원만들기</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat consequuntur laboriosam esse at nulla quasi explicabo sit a, ut obcaecati et velit incidunt reiciendis, quis tempora distinctio totam ex quos.</p>
+            <a href="#"><strong>more</strong></a>
+        </div> <!-- .text end -->
+
+    </section> <!-- .cont01 end -->
+
+</body>
+</html>

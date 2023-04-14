@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>트랜스폼_확대와 축소</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+        .list {
+            display: flex;
+            justify-content: center;
+        }
+        .list figure {
+            width: 400px;
+            height: 400px;
+            margin: 50px;
+            transition: 0.7s;
+            position: relative;
+            overflow: hidden; /* 설정한 px 벗어난 영역 숨기기 */
+        }
+        .list figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .list figure:nth-child(1) img {
+            transform: scaleX(1.3); /* scaleX : 가로 이미지 확대 (1이 기준값) */
+        }
+        .list figure:nth-child(2) img {
+            transform: scaleY(0.5); /* scaleY : 세로 이미지 축소 */
+        }
+        .list figure:nth-child(3):hover img {
+            transform: scale(1.5); /* 1개 값만 작성해도 x축,y축 동시에 적용 */
+            transition: 0.7s;
+        }
+        .list figure a {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: aliceblue;
+            border: 1px solid #ffffff;
+            background-color: #ffffff61;
+            width: 150px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+
+            opacity: 0;
+            transition: 0.7s;
+        }
+        .list figure:nth-child(3)::before {
+            content: ''; /* 가상선택자 쓸 때 꼭 필요! */
+            width: 100%;
+            height: 100%;
+            background-color: rgba(232, 185, 68, 0.452);
+            display: block; /* absolute 쓰면 display:block 필요없음, 영역 보려고 씀 */
+            position: absolute; /* 가상선택자라서 실제 본인(figure)에게 realative 잡음 */
+            top: 0;
+            left: 0;
+            
+            transition: 0.7s;
+            opacity: 0;
+        }
+        .list figure:nth-child(3):hover::before {
+            /* ▲ 띄워쓰기 금지! */
+            opacity: 1;
+            z-index: 1;
+        }
+        .list figure:nth-child(3):hover a {
+            opacity: 1;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+        <figure>
+            <img src="img/cat12.jpg" alt="고양이" />
+        </figure>
+        <figure>
+            <img src="img/cat14.jpg" alt="고양이" />
+        </figure>
+        <figure>
+            <img src="img/cat9.jpg" alt="고양이" />
+            <a href="#">바로가기</a>
+        </figure>
+    </div> <!-- .list end -->
+</body>
+</html>

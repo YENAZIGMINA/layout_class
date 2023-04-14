@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        section {
+                background-color: #efefef ;
+                padding: 50px;
+                margin: 50px 0;
+            }
+        
+        .flex_01 .list {
+            background-color: rgb(238, 233, 154);
+            display: flex; /* 직계 자식들 가로정렬 */
+            justify-content: space-around;
+            /*
+            space-between : 양끝에 붙여서 사이간격을 동일하게 적용
+            space-around : 동일한 간격 (양끝 여백은 가운데 여백의 2/1만 남길 수 있도록 적용)
+            space-evenly : 양끝 포함해서 동일한 여백을 가짐
+            center : 가운데 배치
+            flex-end : 오른쪽에 배치
+            flex-start : 왼쪽에 배치 (기본값)
+            */
+        }
+        .flex_01 .list div {
+            width: 32%;
+            background-color: burlywood;
+            color: brown;
+            border: 1px solid #a54c38;
+        }
+
+
+        .flex_02 .list {
+            background-color: rgb(255, 97, 89);
+            display: flex;
+            align-items: center;
+            /* align-items => 수직정렬
+            center : 아이템끼리 세로 가운데 배치
+            flex-end : 아이템끼리 아래쪽에 배치
+            flex-start : 아이템끼리 위쪽에 배치
+            */
+        }
+        .flex_02 .list div:nth-child(1) {
+            height: 100px;
+            background-color: #b93737;
+            color: #fff;
+        }
+        .flex_02 .list div:nth-child(2) {
+            height: 150px;
+            background-color: #ea4040;
+            color: #fff;
+        }
+        .flex_02 .list div:nth-child(3) {
+            background-color: #ff8b8b;
+            color: #fff;
+        }
+        
+
+        .flex_03 .list {
+            height: 500px;
+            background-color: rgb(255, 164, 61);
+            display: flex; /* 공간이 부족해도 옆에 나란히 붙어있음 */
+            flex-wrap: wrap;
+            /* flex-wrap => 세로로 나열
+            wrap : 세로로 나열
+            wrap-reverse : 반대로 세로로 나열 */
+            align-content: space-between;
+             /*
+            align-content => 2줄이상의 세로정렬
+            space-between : 양끝에 붙여서 사이간격을 동일하게 적용
+            space-around : 동일한 간격 (양끝 여백은 가운데 여백의 2/1만 남길 수 있도록 적용)
+            space-evenly : 양끝 포함해서 동일한 여백을 가짐
+            center : 가운데 배치
+            flex-end : 아래쪽에 배치
+            flex-start : 위에 배치 (기본값)
+            */
+            justify-content: space-between;
+        }
+        .flex_03 .list div {
+            background-color: #ffd996;
+            width: 45%;
+            border: 1px solid #dca162;
+        }
+
+
+        .flex_04 .list {
+            background-color: pink;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+            /* 
+             flex-direction = > 방향설정
+             column : 아이템 세로로 나열
+             column-reverse : 역방향으로 아이템 세로로 나열*/
+             /*
+             flex-direction 사용 후,
+              ㄴ justify-content => 세로정렬
+              ㄴ align-content => 가로정렬 로 바뀜*/
+
+            align-content: flex-end;
+            /* justify-content: flex-end;는 적용안됨 -> flex-direction을 사용했기 때문 */
+        }
+
+
+        .flex_05 .list {
+            display: flex;
+            flex-direction: column;
+        }
+        .flex_05 .list div:nth-child(2) {
+            order: -1;
+        }
+        .flex_05 .list div:nth-child(1) {
+            order: 1;
+        }
+
+    </style>
+
+</head>
+<body>
+    <section class="flex_01">
+        <h3>justify-content : 수평정렬</h3>
+        <div class="list">
+            <div>items 01</div>
+            <div>items 02</div>
+            <div>items 03</div>
+        </div> <!-- .list end -->
+    </section> <!-- .flex_01 end -->
+
+    <section class="flex_02">
+        <h3>align-items : 수직정렬(1줄)</h3>
+        <div class="list">
+            <div>items 01</div>
+            <div>items 02</div>
+            <div>items 03</div>
+        </div> <!-- .list end -->
+    </section> <!-- .flex_02 end -->
+
+    <section class="flex_03">
+        <h3>align-content : 수직정렬(2줄 이상)</h3>
+        <div class="list">
+            <div>items 01</div>
+            <div>items 02</div>
+            <div>items 03</div>
+        </div> <!-- .list end -->
+    </section> <!-- .flex_03 end -->
+
+    <section class="flex_04">
+        <h3>align-direction : 가로세로 방향설정</h3>
+        <div class="list">
+            <div>items 01</div>
+            <div>items 02</div>
+            <div>items 03</div>
+        </div> <!-- .list end -->
+    </section> <!-- .flex_04 end -->
+
+    <section class="flex_05">
+        <h3>order : 아이템 순서 변경</h3>
+        <div class="list">
+            <div>items 01</div>
+            <div>items 02</div>
+            <div>items 03</div>
+        </div> <!-- .list end -->
+    </section> <!-- .flex_05 end -->
+</body>
+</html>

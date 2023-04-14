@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ballet soho</title>
+
+    <style>
+            @font-face {
+        font-family: 'HSBombaram21-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .section_01 {
+            background-color: crimson;
+            padding: 150px 0;
+        }
+
+        .section_01 {
+            height: 700px;
+            background: url(img/red-bg.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .section_01 h3 {
+            font-family: 'HSBombaram21-Regular';
+            font-size: 45px;
+            color: rgb(255, 216, 216);
+            margin-bottom: 100px;
+        }
+
+        .section_01 .list{
+            width: 1240px;
+         /* background-color: rgb(130, 33, 33); /* 영역 확인용 백그라운드 컬러넣기 */
+            margin: 0 auto; /* 화면 가운데로 정렬 */
+            display: flex; /* 이미지 가로로 나열 (플렉스 태그는 적용하는 바로 위 부모 선택자에 작성) */
+            justify-content: space-between; /* display:flex;랑만 사용가능! */
+            /* 수평정렬 : 양끝에 붙여서 정렬 및 사이 간격 자동으로 배치 */
+        }
+
+        .section_01 .list div {
+            width: 600px;
+          /* display: inline-block; -> 문제는 사이 여백발생 */
+        }
+        .section_01 .list div img {
+            width: 600px;
+            height: 500px;
+            border-radius: 15px;
+            object-fit: cover;
+            box-shadow: 7px 7px 15px #5e1414c9; /* 그림자:x축 y축 블러px 컬러 */
+        }
+
+        .section_01 .list div p {
+            font-family: 'HSBombaram21-Regular';
+            font-size: 22px;
+            color: aliceblue;
+            margin-top: 15px; /* padding:15px도 가능 */
+            text-align: center;
+        }
+
+        .section_01 h3 {
+            text-align: center;
+        }
+
+
+
+        .section_02 {
+            background-color: rgb(37, 35, 35);
+            padding: 150px 0;
+        }
+        .section_02 h3 {
+            font-family: 'HSBombaram21-Regular';
+            font-size: 30px;
+            color: crimson;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section_02 .list_02 div img {
+           width: 400px;
+           height: 200px;
+           border-radius: 15px;
+           object-fit: cover;
+           box-shadow: 5px 5px 13px #e4dada7c;
+        }
+        .section_02 .list_02 div p{
+            text-align: center;
+            color: aliceblue;
+            padding: 30px;
+        }
+        .section_02 .list_02 {
+            font-family: 'HSBombaram21-Regular';
+            width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+
+    </head>
+<body>
+    <section class="section_01">
+        <h3>지금 가장 인기있는 발레슈즈</h3>
+        <div class="list">
+        <div>
+            <img src="img/ballet-sho.jpg" alt="포인트슈즈" />
+            <p>그리쉬코 토슈즈</p>
+        </div>
+
+        <div>
+            <img src="img/ballet-sho2.jpg" alt="포인트슈즈 신는방법" />
+            <p>포인트슈즈 신는방법</p>
+        </div>
+        </div> <!-- .list end -->
+    </section> <!-- .section_01 end -->
+
+    <section class="section_02">
+        <h3>[아름다운 발레동작]</h3>
+        <div class="list_02">
+            <div>
+                <img src="img/ballerina.jpg" alt="백조의호수" />
+                <p>백조의 호수</p>
+            </div>
+            <div>
+                <img src="img/ballet-pose-1725207_960_720.jpg" alt="숲속의 아라베스크" />
+                <p>숲속의 아라베스크</p>
+            </div>
+            <div>
+                <img src="img/people.jpg" alt="그랑제떼" />
+                <p>파드되:그랑제떼</p>
+            </div>
+
+        </div> <!-- .list_02 end -->
+    </section> <!-- .section_02 end -->
+</body>
+</html>

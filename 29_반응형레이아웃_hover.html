@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 레이아웃_hover</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        body {
+            color: #333;
+        }
+
+        .cont01 {
+            max-width: 1440px;
+            width: calc(100% - 20px); /* 화면크기 1440px 이하일 때, 좌우여백 10px 고정값 */ 
+                                      /* px말고, %로 설정해도 됨 */
+            margin: 100px auto;
+
+            /* ▼ 반응형을 위해 미리 설정함 */
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* div를 세로로 떨어지게 함 */
+        }
+        .cont01 div {
+            width: calc(100% / 4 - 20px);
+        }
+        .cont01 div figure {
+            height: 250px;
+        }
+        .cont01 div figure img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cont01 div a {
+            width: 100%;
+            height: 40px;
+            display: inline-block;
+            line-height: 40px;
+            background-color: crimson;
+            color: aliceblue;
+            text-align: center;
+            /* ▼ 숨기기 */
+            opacity: 0;
+            transition: 1s;
+        }
+        /* ▼ 나타나기 */
+        .cont01 div:hover a {
+            opacity: 1;
+            transition: 1s;
+        }
+
+
+        /* ▼화면의 크기가 1024px 이하일 때, div를 2개씩 2줄로 설정 + a 태그를 눈에 보이도록 설정 */
+        @media all and (max-width:1024px) {
+            .cont01 div {
+                width: calc(100% / 2 - 10px);
+                margin-bottom: 20px;
+            }
+            .cont01 div a {
+                opacity: 1;
+            }
+        }
+          /* 웹화면이 아닌 모바일에서는 사용자가 굳이 꾸-욱 눌러서 hover 효과를 사용안하므로,
+             모바일 해상도에서는 해제해주는 것 */
+
+    </style>
+
+</head>
+<body>
+    <section class="cont01">
+        <div>
+            <figure>
+                <img src="img/cook22.jpg" alt="마카롱" />
+            </figure>
+            <a href="#">마카롱</a>
+        </div>
+        <div>
+            <figure>
+                <img src="img/cook29.jpg" alt="브런치" />
+            </figure>
+            <a href="#">브런치</a>
+        </div>
+        <div>
+            <figure>
+                <img src="img/cook31.jpg" alt="치즈" />
+            </figure>
+            <a href="#">치즈&햄 플레이트</a>
+        </div>
+        <div>
+            <figure>
+                <img src="img/cook30.jpg" alt="와인" />
+            </figure>
+            <a href="#">화이트와인</a>
+        </div>
+    </section> <!-- .cont01 end -->
+</body>
+</html>

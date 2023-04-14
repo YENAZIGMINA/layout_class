@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 레이아웃_1</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .cont01 {
+            background-color: darkslateblue;
+            padding: 100px 0;
+        }
+        .cont01 .inner {
+            width: 1440px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .cont01 .inner div {
+            background-color: aliceblue;
+            width: calc(100% / 4 - 20px);
+            height: 200px;
+            padding: 20px;
+            box-sizing: border-box;
+
+            border-radius: 20px;
+            box-shadow: 10px 10px 20px #0a0825c6; /* 그림자:x축 y축 블러범위 색상*/
+            box-shadow: inset 5px 5px 10px #a4a4a4ad; /* 내부그림자 */
+        }
+
+        /* ▼ 컨테이너 중심축 값 1440px을 화면크기 1440px 이하일 때 width값 변화  */
+        @media all and (max-width:1440px) {
+            .cont01 .inner {
+                width: 98%; /* 화면아래 스크롤바 안생김! */
+            }
+        } /* ~1440px 이하 */
+
+        /* ▼ 화면 크기 1024px 이하일 때, div를 2개씩 2줄로 변경 + 높이값, 가로값 재설정 */
+        @media all and (max-width:1024px) {
+            .cont01 .inner {
+                flex-wrap: wrap;
+                /* flex속성.. div를 세로로 떨어뜨려주는 역할 */
+            }
+            .cont01 .inner div {
+                width: calc(100% / 2 - 10px);
+                margin-bottom: 20px;
+                height: auto; /* 고정된 높이값 풀고, 초기화 - 기본값(개체가 가지고있는 영역만큼)으로 변경해줌 */
+            }
+        } /* ~1024px 이하 */
+
+        /* ▼ 화면 크기 640px 이하일 때, div 가로값 변경하여 1개씩 배치하여 4줄로 만들기*/
+        @media all and (max-width:640px) {
+            .cont01 .inner div {
+                width: 100%; /* 100% - 부모가 가진 값만큼 설정 */
+            }
+        } /* ~640px 이하 */
+
+    </style>
+</head>
+<body>
+    <section class="cont01">
+        <div class="inner">
+            <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem fuga ducimus eos eaque rerum quisquam earum numquam nihil voluptates minima quo nemo magni, odio distinctio hic cumque unde sed suscipit.</div>
+            <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem fuga ducimus eos eaque rerum quisquam earum numquam nihil voluptates minima quo nemo magni, odio distinctio hic cumque unde sed suscipit.</div>
+            <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem fuga ducimus eos eaque rerum quisquam earum numquam nihil voluptates minima quo nemo magni, odio distinctio hic cumque unde sed suscipit.</div>
+            <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rem fuga ducimus eos eaque rerum quisquam earum numquam nihil voluptates minima quo nemo magni, odio distinctio hic cumque unde sed suscipit.</div>
+        </div> <!-- .inner end -->
+    </section> <!-- .cont01 end -->
+</body>
+</html>

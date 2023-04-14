@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네비게이션</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none; /* 불릿 없애기 */
+        }
+        a{
+            text-decoration: none; /* 밑줄 없애기 */
+            color: inherit; /* inherit => 부모가 가진 값을 상속받아 사용 가능 (기존 파랑색말고) */
+        }
+        body {
+            color: #333;
+        }
+        header {
+            height: 100px;
+            border-bottom: 1px solid #333;
+            display: flex;
+            line-height: 100px; /* 글자사이(행간) 간격 의미 */
+        }
+        header nav > ul > li {
+            width: 150px;
+            display: inline-block; /* 기능 : 가로로 나열, 본인이 가진 영역만큼 잡아주는 것 */
+            vertical-align: top; /* 위쪽 맞춰서 정렬 */
+            margin: 0 20px;
+            text-align: center;
+        }
+        /* ▼2차메뉴 */
+        header nav .depth02 {
+            background-color: rgb(114, 96, 60);
+            color: azure;
+            line-height: 1; /* header 높이 100px 적용한 것 공간줄이기 */
+            display: none; /* 2차메뉴 없애기 */
+        }
+        header nav .depth02 li {
+            padding: 20px;
+        }
+        /* ▼ 1차메뉴에 마우스 올렸을 때, 2차메뉴 보이기 */
+        header nav > ul > li:hover .depth02 {
+            display: block; /* 보여주기 */
+        }
+        header nav .depth02 li:hover {
+            background-color: rgb(158, 129, 92);
+            color: rgb(43, 35, 21);
+        } /* hover는 본인, 자식, 자손만 적용됨! 부모선택자에는 불가능! */
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1> <!-- 로고 넣을때 -->
+            <a href="#">CJ프레시웨이</a>
+        </h1>
+        <nav> <!-- 홈페이지 주메뉴 -->
+            <ul>
+                <li>
+                    <a href="#">솔루션</a>
+                </li>
+                <li>
+                    <a href="#">지속가능경영</a>
+                </li>
+                <li>
+                    <a href="#">뉴스룸</a>
+                </li>
+                <li>
+                    <a href="#">투자정보</a>
+                </li>
+                <li>
+                    <a href="#">채용</a>
+                    <ul class="depth02">
+                        <li> <!-- 각각 li로 잡아서 넣어야 아래정렬 됨! -->
+                            <a href="#">인사정보</a>
+                        </li>
+                        <li>
+                            <a href="#">채용정보</a>
+                        </li>
+                    </ul> <!-- .depth02 end -->
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
